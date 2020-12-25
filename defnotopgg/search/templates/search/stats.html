@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Name Test</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+    {% if summon%}
+    {% if strk %}
+    
+        {% for streak in strk %}
+          {%if streak.typeofStreak == 'True'%}
+            <p>{{summon}} is on a  {{streak.streakLength}} game win streak in the last 12 hours</p>
+          
+          {%else%}
+            <p>{{summon}} is on a {{streak.streakLength}} game lose streak in the last 12 hours</p>
+          {%endif%}
+        {% endfor %}
+    {% endif %}
+    {% endif %}
+    
+
+    {% if win%}
+    {% if lose%}
+        <p>Wins: {{win}}, Losses: {{lose}}</p>
+    {% endif %}
+    {% endif %}
+
+    {% if sta %}
+      <ul>
+      {%for match in sta %}
+          <li>
+            {{match.win}}, {{match.championName}}, Level:{{match.champLevel}}
+          </li>
+      {% endfor %}
+      </ul>
+    {%endif%}
+
+   </form>
+  </body>
+</html>
